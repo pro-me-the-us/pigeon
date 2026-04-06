@@ -1,3 +1,20 @@
 spring:
   application:
     name: pigeon
+  datasource:
+    # Remove the trailing semicolon from the URL
+    url: jdbc:h2:file:./pigeon;AUTO_SERVER=TRUE
+    driver-class-name: org.h2.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        # Explicitly tell Hibernate to use H2 to avoid the "Unable to determine Dialect" error
+        dialect: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true #enables the web interface at /h2-console
+
+port: 8080
