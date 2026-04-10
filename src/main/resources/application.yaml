@@ -20,8 +20,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: shubhashish.shukla23b@iiitg.ac.in
-    password: uncp saea esqx borr
+    username: <enter username>
+    password: <enter password>
     properties:
       mail:
         smtp:
