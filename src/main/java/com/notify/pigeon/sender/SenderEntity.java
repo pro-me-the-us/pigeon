@@ -1,21 +1,19 @@
 package com.notify.pigeon.sender;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
+@Builder
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "sender")
+@Entity(name = "senders")
 public class SenderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @NonNull
+    @Column(nullable = false)
     private Long id;
 
     @NonNull

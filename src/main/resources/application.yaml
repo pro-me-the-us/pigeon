@@ -17,4 +17,19 @@ spring:
     console:
       enabled: true #enables the web interface at /h2-console
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: shubhashish.shukla23b@iiitg.ac.in
+    password: uncp saea esqx borr
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
 port: 8080

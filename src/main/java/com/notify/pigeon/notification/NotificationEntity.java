@@ -6,15 +6,16 @@ import lombok.*;
 
 import java.util.Date;
 
+@Builder
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "notification")
+@Entity(name = "notifications")
 public class NotificationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @NonNull
+    @Column(nullable = false)
     private Long id;
 
     @NonNull

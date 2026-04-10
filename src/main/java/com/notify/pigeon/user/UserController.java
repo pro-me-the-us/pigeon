@@ -17,9 +17,15 @@ public class UserController {
 
 
     @PostMapping("/signup")
-    ResponseEntity<UserEntity> signupUser(@RequestBody CreateUserDTO request){
+    ResponseEntity<UserResponseDTO> signupUser(@RequestBody CreateUserDTO request){
         var newuser = userServices.createUser(request);
-        return new ResponseEntity<>(newuser, HttpStatus.CREATED);
+        var response = new UserResponseDTO();
+        response.setId(newuser.getId());
+        response.setUsername(newuser.getUsername());
+        response.setContact(newuser.getContact());
+        response.setEmail(newuser.getEmail());
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
         //TODO : Verify email using regex, add password using hash (JWT/OAuth);
     }
+
 }
